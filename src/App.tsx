@@ -4,12 +4,13 @@ import {Container, Nav} from 'react-bootstrap'
 import About from './pages/About'
 import Store from './pages/Store'
 import Home from './pages/Home'
-import Navbar from './pages/Navbar'
+import { Navbar } from './pages/Navbar'
+import { ShoppingCartProvider } from './context/shoppingCartContext'
 
 function App() {
 
-  return (
-    <>
+  return ( 
+  <ShoppingCartProvider>
     <Navbar/>
       <Container className='nb-4'>
         <Routes>
@@ -18,7 +19,7 @@ function App() {
           <Route path='/about' element={<About/>}/>
         </Routes>
       </Container>
-    </>
+    </ShoppingCartProvider>
   )
 }
 
